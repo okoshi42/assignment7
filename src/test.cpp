@@ -40,6 +40,16 @@ TEST_CASE( "Queue Tests", "[queue]" ) {
         // work properly in concert with getCount()
         // and remove()
         // YOUR CODE HERE
+        for (int x = 0; x < 20; x++){
+        q1.push(x);
+        CHECK(q1.getCount() == x+1); 
+        }
+        for (int x = 0; x < 15; x++) {
+            CHECK(q1.pop() == x);
+            CHECK(q1.peek() == x+1);
+            CHECK(q1.getCount() == 20 - (x+1));
+        }
+
     }
     
     SECTION( "Queue w/ string tests" ) {
@@ -48,16 +58,36 @@ TEST_CASE( "Queue Tests", "[queue]" ) {
         // work properly in concert with getCount()
         // and remove()
         // YOUR CODE HERE
+        q2.push("strang");
+        q2.push("streng");
+        q2.push("string");
+        q2.push("strong");
+        q2.push("strung");
+        CHECK(q2.getCount() == 5);
+        CHECK(q2.peek() == "strang");
+        q2.pop();
+        CHECK(q2.peek() == "streng");
     }
 }
 
 TEST_CASE( "Stack Tests", "[stack]" ) {
     SECTION( "Stack w/ int tests" ) {
-        Stack<int> s1 = Stack<int>();
+     
+
         // Ensure that push(), pop(), and peek()
         // work properly in concert with getCount()
         // and remove()
         // YOUR CODE HERE
+        Stack<int> s1 = Stack<int>();
+        for (int x = 0; x < 20; x++) {
+            s1.push(x); 
+            CHECK(s1.getCount() == x + 1);
+        }
+        for (int x = 0; x < 15; x++) {
+            CHECK(s1.pop() == 20-(x+1));
+            CHECK(s1.peek() == 20 - (x + 2));
+            CHECK(s1.getCount() == 20 - (x + 1));
+        }
     }
     
     SECTION( "Stack w/ string tests" ) {
@@ -66,6 +96,15 @@ TEST_CASE( "Stack Tests", "[stack]" ) {
         // work properly in concert with getCount()
         // and remove()
         // YOUR CODE HERE
+        s2.push("strang");
+        s2.push("streng");
+        s2.push("string");
+        s2.push("strong");
+        s2.push("strung");
+        CHECK(s2.getCount() == 5);
+        CHECK(s2.peek() == "strung");
+        s2.pop();
+        CHECK(s2.peek() == "strong");
     }
 }
 

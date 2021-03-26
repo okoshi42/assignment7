@@ -39,6 +39,18 @@ namespace csi281 {
     class Stack : public SequentialCollection<T> {
     public:
         // YOUR CODE HERE
+        void push(const T& item) {
+            backingStore.push_back(item);
+        }
+        T pop() {
+            T ret = backingStore.back();
+            backingStore.pop_back();
+            return ret;
+        }
+        T& peek() {
+            T& ret = backingStore.back();
+            return ret;
+        }
     protected:
         using SequentialCollection<T>::backingStore;
     };

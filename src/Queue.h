@@ -39,6 +39,20 @@ namespace csi281 {
     class Queue : public SequentialCollection<T> {
     public:
         // YOUR CODE HERE
+        void push(const T& item) {
+            backingStore.push_back(item);
+        }
+        T pop() {
+            T ret = backingStore.front();
+            backingStore.pop_front();
+            return ret;
+        }
+        T& peek() {
+            T& ret = backingStore.front();
+            return ret;
+        }
+
+
     protected:
         using SequentialCollection<T>::backingStore;
     };
