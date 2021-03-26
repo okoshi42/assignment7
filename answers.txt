@@ -1,0 +1,6 @@
+jacob okoshi
+
+1. A line at a coffee shop, orders at a restaurant, a cup dispenser(they typically require loading at the top, and then dispenses from the bottom)
+2. social media feeds, a multilayered cake(in the sense that you cannot eat the bottom tier before the top tier is gone, and the cake is constructed from the bottom up), a literal stack of papers
+3. Not necessarily, it only means that the software does not crash when faced with the cases the maker of the unit test though of. Unless the test maker can prove their test cases cover all cases, you cannot say for sure the software runs 100% correctly
+4. A linked list is better because it allows us to add and remove elements without recreating the entire array, in addition stacks and queues only deal with the front and back which fits perfectly with a linked list's functionality.
